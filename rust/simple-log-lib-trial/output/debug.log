@@ -1,0 +1,9 @@
+2021-32-01_12:32:23 [DEBUG] (3) simple_log_lib_trial::tests: Debug
+2021-32-01_12:32:23 [ERROR] Error!
+2021-32-01_12:32:23 [INFO] Info!
+2021-32-01_12:32:23 [INFO] Log
+2021-32-01_12:32:23 [WARN] Warn
+2021-32-01_12:32:23 [DEBUG] (2) simple_log_lib_trial::trial: Debug in new()
+2021-32-01_12:32:23 [ERROR] Error in new()
+2021-32-01_12:32:23 [INFO] Num1: 5
+2021-32-01_12:32:23 [WARN] Sum: 11
