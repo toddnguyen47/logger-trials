@@ -1,0 +1,16 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[packages]
+colorama = "*"
+rope = "*"
+
+[dev-packages]
+black = "*"
+
+[requires]
+
+[pipenv]
+allow_prereleases = true
