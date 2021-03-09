@@ -1,5 +1,5 @@
 [package]
-authors = ["zx"]
+authors = ["toddnguyen47"]
 edition = "2018"
 name = "simple-log-lib-trial"
 version = "0.1.0"
