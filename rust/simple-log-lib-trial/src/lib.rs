@@ -17,6 +17,8 @@ pub fn setup_logger() {
     INIT.call_once(|| {
         let mut config_builder = ConfigBuilder::new();
         config_builder.set_time_format_str("%Y-%m-%d_%H:%M:%S");
+        // If you want ISO 8601 format, use the time format on line below
+        // config_builder.set_time_format_str("%+");
         let is_local_time = true;
         config_builder.set_time_to_local(is_local_time);
         let config = config_builder.build();
