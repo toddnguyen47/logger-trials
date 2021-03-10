@@ -46,6 +46,15 @@ class StreamCustomFormatter(logging.Formatter):
 
 
 def init_logger(name: Optional[str] = None) -> logging.Logger:
+    """Initialize and return a logger that can be used via `logger.debug(), logger.warn()`, etc.
+
+    Args:
+        name (Optional[str], optional): The name of the logger. If `None`, use the root logger. \
+Defaults to `None`.
+
+    Returns:
+        logging.Logger: The Logger object that can be used to call logging functions on.
+    """
     # Ref: https://www.machinelearningplus.com/python/python-logging-guide/
     # Gets or create a logger
     logger = logging.getLogger(name)
