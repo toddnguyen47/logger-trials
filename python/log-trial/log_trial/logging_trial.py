@@ -19,14 +19,14 @@ class StreamCustomFormatter(logging.Formatter):
         self._fmt = "%(asctime)s - %(name)s - %(levelname)s - %(message)s (%(filename)s:%(lineno)d)"
         if fmt.strip():
             self._fmt = fmt
-        self._fmt = self._stylize_fmt_string(r"%\(asctime\)s", Style.DIM)
+        self._fmt = self._stylize_fmt_string("%(asctime)s", Style.DIM)
 
         self._FORMATS = {
-            logging.DEBUG: self._stylize_fmt_string(r"%\(levelname\)\S*s", Fore.WHITE),
-            logging.INFO: self._stylize_fmt_string(r"%\(levelname\)\S*s", Fore.GREEN),
-            logging.WARNING: self._stylize_fmt_string(r"%\(levelname\)\S*s", Fore.YELLOW),
-            logging.ERROR: self._stylize_fmt_string(r"%\(levelname\)\S*s", Fore.RED),
-            logging.CRITICAL: self._stylize_fmt_string(
+            logging.DEBUG: self._stylize_fmt_string_regex(r"%\(levelname\)\S*s", Fore.WHITE),
+            logging.INFO: self._stylize_fmt_string_regex(r"%\(levelname\)\S*s", Fore.GREEN),
+            logging.WARNING: self._stylize_fmt_string_regex(r"%\(levelname\)\S*s", Fore.YELLOW),
+            logging.ERROR: self._stylize_fmt_string_regex(r"%\(levelname\)\S*s", Fore.RED),
+            logging.CRITICAL: self._stylize_fmt_string_regex(
                 r"%\(levelname\)\S+s", Fore.RED + Style.BRIGHT
             ),
         }
@@ -36,7 +36,10 @@ class StreamCustomFormatter(logging.Formatter):
         formatter = logging.Formatter(log_fmt)
         return formatter.format(record)
 
-    def _stylize_fmt_string(self, regex_to_color: str, color: int) -> str:
+    def _stylize_fmt_string(self, str_to_replace: str, color: int) -> str:
+        return self._fmt.replace(str_to_replace, color + str_to_replace + Style.RESET_ALL)
+
+    def _stylize_fmt_string_regex(self, regex_to_color: str, color: int) -> str:
         matched = re.search(regex_to_color, self._fmt)
         str_to_color = matched.group(0)
         return self._fmt.replace(str_to_color, color + str_to_color + Style.RESET_ALL)
