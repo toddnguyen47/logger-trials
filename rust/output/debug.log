@@ -43,3 +43,21 @@
 2021-03-09_09:28:17 [ERROR] Error in new()
 2021-03-09_09:28:17 [INFO] Num1: 5
 2021-03-09_09:28:17 [WARN] Sum: 11
+2021-03-09_16:29:21 [DEBUG] (2) simple_log_lib_trial::trial: Debug in new()
+2021-03-09_16:29:21 [DEBUG] (3) simple_log_lib_trial::tests: Debug
+2021-03-09_16:29:21 [ERROR] Error in new()
+2021-03-09_16:29:21 [ERROR] Error!
+2021-03-09_16:29:21 [INFO] Num1: 5
+2021-03-09_16:29:21 [INFO] Info!
+2021-03-09_16:29:21 [WARN] Sum: 11
+2021-03-09_16:29:21 [INFO] Log
+2021-03-09_16:29:21 [WARN] Warn
+2021-03-09_16:31:44 [DEBUG] (2) simple_log_lib_trial::trial: Debug in new()
+2021-03-09_16:31:44 [DEBUG] (3) simple_log_lib_trial::tests: Debug
+2021-03-09_16:31:44 [ERROR] Error in new()
+2021-03-09_16:31:44 [ERROR] Error!
+2021-03-09_16:31:44 [INFO] Num1: 5
+2021-03-09_16:31:44 [INFO] Info!
+2021-03-09_16:31:44 [WARN] Sum: 11
+2021-03-09_16:31:44 [INFO] Log
+2021-03-09_16:31:44 [WARN] Warn
