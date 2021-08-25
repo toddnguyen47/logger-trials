@@ -13,7 +13,7 @@ from colorama import Fore, Style
 colorama.init()
 
 _LOGS_FOLDER = "logs"
-_LOG_FORMAT_STR_STREAM = "[%(asctime)s] [%(levelname)-10s] %(message)s " + "[%(filename)s:%(lineno)d]"
+_LOG_FORMAT_STR_STREAM = "[%(asctime)s] [%(levelname)-10s] [%(filename)s:%(lineno)d] >>> %(message)s "
 _LOG_FORMAT_STR_FILE = _LOG_FORMAT_STR_STREAM + " [Logger Name: %(name)s]"
 _DATE_FMT_STR = "%Y-%m-%dT%H:%M:%S"
 
@@ -83,8 +83,8 @@ def _add_file_handler(name: str, formatter: logging.Formatter, logger: logging.L
     if not os.path.exists(_LOGS_FOLDER):
         os.mkdir(_LOGS_FOLDER)
     file_handler = logging.FileHandler("logs/" + name + ".log")
-    # For files, we probably want to log all levels
     file_handler.setFormatter(formatter)
+    # For files, we probably want to log all levels
     file_handler.setLevel(logging.DEBUG)
     logger.addHandler(file_handler)
 
